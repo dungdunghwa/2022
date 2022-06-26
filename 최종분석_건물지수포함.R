@@ -6,7 +6,7 @@ setwd('D:/2022시계열스터디/데이터/필수데이터')
 idx=read.csv("idx_df.csv")
 building=read.csv('building_final.csv')
 target_parking=read.csv("target_parking.csv")
-#빌딩 데이터의 위도와 경도가 10996행부터 바뀜
+#columns of lat and lng change from 10996 to the end.
 id=seq(10996, 14259)
 lng=building$lng
 lat=building$lat
@@ -73,7 +73,7 @@ score<-c()
 for (i in 1:20){ans<-allocations(datame,metric=dist,p=i,verbose=T)
 ans_unique <- unique(ans$allocation)
 score[i]<- sum(ans$allocdist)}
-options(scipen=999) #이거 한번 입력해주면 숫자 포멧 해결
+options(scipen=999) #to fix the range of y axis in the graph.
 plot(score,type='b',main='Weighted distance versus P-values',xlab="p")
 
 #시각화
@@ -90,6 +90,7 @@ print('P-median 입지선정 결과')
 idx[unique(result_t$allocation),3]
 result_t$lat[unique(result_t$allocation)]
 result_t$lng[unique(result_t$allocation)]
+
 '''
 P-median결과
 신문리주차창(37.74691, 126.4821)
