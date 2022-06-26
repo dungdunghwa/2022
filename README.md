@@ -32,4 +32,4 @@ allocations(datame, metric = dist, p=5, verbose = T)->result_t
 ## 'GISTools' package  
 Package 'GISTools' is not available for version 4 or above, so you have to download and install it by yourself.  
 You can download in : <https://cran.r-project.org/src/contrib/Archive/GISTools/>    
-GISTools is visualisation tool to make P-median graph.    
+GISTools enables you to make P-median graph.    
